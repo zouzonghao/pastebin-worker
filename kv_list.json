@@ -1,0 +1,23 @@
+yarn run v1.22.22
+$ /home/zzh/pastebin-worker/node_modules/.bin/wrangler kv:key list --binding PB
+[
+  {
+    "name": "~001",
+    "expiration": 1718993321,
+    "metadata": {
+      "lastModified": "2024-06-21T18:03:41.235Z",
+      "passwd": "Wp5kcrZ4XTjkW2kdX4h6XFSP",
+      "postedAt": "2024-06-21T18:03:41.235Z"
+    }
+  },
+  {
+    "name": "~002",
+    "expiration": 1718993356,
+    "metadata": {
+      "lastModified": "2024-06-21T18:04:16.003Z",
+      "passwd": "TDr7Gjd7ftDSYsh4ttGefdKx",
+      "postedAt": "2024-06-21T18:04:16.003Z"
+    }
+  }
+]
+Done in 4.50s.

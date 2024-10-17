@@ -49,7 +49,7 @@ export async function handleGet(request, env, ctx) {
 
   // when paste is not found
   if (item.value === null) {
-    throw new WorkerError(404, `paste of name '${short}' not found`)
+    throw new WorkerError(404, `分享 '${short}'不存在！ `)
   }
 
   // check `if-modified-since`

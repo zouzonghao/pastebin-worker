@@ -88,7 +88,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const adminUrlValid = urlType !== 'admin' || isAdminUrlLegal(adminUrl)
 
     if (!pasteNotEmpty) {
-      disableSubmitButton('Paste is empty')
+      disableSubmitButton('请输入文字！')
     } else if (!expirationValid) {
       disableSubmitButton(`Expiration “${expiration}” not valid`)
     } else if (!nameValid) {
@@ -101,10 +101,10 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     if (urlType === 'admin') {
-      submitButton.text('Update')
+      submitButton.text('更新')
       deleteButton.removeClass('hidden')
     } else {
-      submitButton.text('Submit')
+      submitButton.text('上传')
       deleteButton.addClass('hidden')
     }
 
@@ -113,7 +113,7 @@ window.addEventListener('DOMContentLoaded', () => {
       submitButton.prop('title', '')
     } else {
       deleteButton.removeClass('enabled')
-      submitErrMsg.text(`The admin URL should start with “${base_url}” and contain a colon`)
+      submitErrMsg.text(` 更新或修改目标 URL 格式为 “${base_url}/” + 路径 + 冒号 + 管理密码 `)
     }
   }
 
@@ -255,7 +255,7 @@ window.addEventListener('DOMContentLoaded', () => {
       data: fd,
       processData: false,
       success: () => {
-        alert('Delete successfully')
+        alert('删除成功！')
       },
       error: handleError,
     })
@@ -288,21 +288,21 @@ window.addEventListener('DOMContentLoaded', () => {
     try {
       document.execCommand('copy')
       resetCopyButtons()
-      button.textContent = 'Copied'
+      button.textContent = '已复制'
     } catch (err) {
-      alert('Failed to copy content')
+      alert('复制失败！')
     }
   })
 
   function resetCopyButtons() {
-    $('.copy-button').text('Copy')
+    $('.copy-button').text('复制')
   }
 
   function handleError(error) {
     const status = error.status || ''
     let statusText = error.statusText === 'error' ? 'Unknown error' : error.statusText
     const responseText = error.responseText || ''
-    alert(`Error ${status}: ${statusText}\n${responseText}\nView your console for more information`)
+    alert(`错误代码 ${status}: ${statusText}\n${responseText}\n请进入控制台查看更多信息！`)
     $('#submit-button').addClass('enabled')
   }
 
