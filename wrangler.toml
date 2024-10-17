@@ -45,4 +45,4 @@ CACHE_STATIC_PAGE_AGE = 7200
 CACHE_PASTE_AGE = 600
 
 [vars.BASIC_AUTH]
-zzh = "Zzh125475"
+account = "your_passwd"
